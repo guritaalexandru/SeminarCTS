@@ -2,6 +2,7 @@ package ro.ase.cts.program;
 
 import ro.ase.cts.clase.BrokerTranzactie;
 import ro.ase.cts.clase.BrokerTranzactieLazy;
+import ro.ase.cts.clase.Protagonist;
 
 public class Main {
 
@@ -22,6 +23,12 @@ public class Main {
 		
 		System.out.println(lazy1.toString());
 		System.out.println(lazy2.toString());
+		
+		Protagonist protagonist1 = Protagonist.getInstance("Fat-Frumos din lacrima", 5, true); 
+		Protagonist protagonist2 = Protagonist.getInstance("Praslea cel voinic si merele de aur", 7, true); 
+		
+		System.out.println(protagonist1.toString());
+		System.out.println(protagonist2.toString());
 	}
 
 }

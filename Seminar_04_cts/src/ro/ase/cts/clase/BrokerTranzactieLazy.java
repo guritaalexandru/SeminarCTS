@@ -6,7 +6,7 @@ public class BrokerTranzactieLazy {
 	private int nrTranzactiiEfectuate;
 	private static BrokerTranzactieLazy broker = null;
 	
-	public static BrokerTranzactieLazy getInstance(String nume, int vechime, int nrTranzactiiEfectuate) {
+	public static synchronized BrokerTranzactieLazy getInstance(String nume, int vechime, int nrTranzactiiEfectuate) {
 		if(broker == null) {
 			broker = new BrokerTranzactieLazy(nume, vechime, nrTranzactiiEfectuate);
 		}
