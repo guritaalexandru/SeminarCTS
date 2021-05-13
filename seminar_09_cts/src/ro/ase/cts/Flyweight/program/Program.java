@@ -1,5 +1,7 @@
 package ro.ase.cts.Flyweight.program;
 
+import java.util.Scanner;
+
 import ro.ase.cts.Flyweight.clase.FlyweightFactory;
 import ro.ase.cts.Flyweight.clase.Rezervare;
 
@@ -11,10 +13,19 @@ public class Program {
 		Rezervare r3 = new Rezervare(2, 7, 19);
 
 		FlyweightFactory fabrica = new FlyweightFactory();
+		System.out.println("Ceva");
+		Scanner scanner = new Scanner(System.in);
+		String nrTel = scanner.next();
 		
-		fabrica.getClient("07123").printeazaRezervare(r1);
-		fabrica.getClient("07222").printeazaRezervare(r2);
-		fabrica.getClient("07123").printeazaRezervare(r3);
+		fabrica.getClient(nrTel).printeazaRezervare(r1);
+		
+		nrTel = scanner.next();
+		
+		fabrica.getClient(nrTel).printeazaRezervare(r2);
+		
+		nrTel = scanner.next();
+		
+		fabrica.getClient(nrTel).printeazaRezervare(r3);
 	}
 
 }

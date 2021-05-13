@@ -2,6 +2,7 @@ package ro.ase.cts.Flyweight.clase;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class FlyweightFactory {
 	private Map<String, Flyweight> listaClienti;
@@ -14,7 +15,10 @@ public class FlyweightFactory {
 	public Flyweight getClient(String nrTelefon) {
 		Flyweight flyweight = listaClienti.get(nrTelefon);
 		if(flyweight == null) {
-			flyweight = new Client("Ion", nrTelefon, "ion@gmail.com");
+			Scanner scanner = new Scanner(System.in);
+			String nume = scanner.next();
+			String adresaMail = scanner.next();
+			flyweight = new Client(nume, nrTelefon, adresaMail);
 			listaClienti.put(nrTelefon, flyweight);
 		}
 		return flyweight;
